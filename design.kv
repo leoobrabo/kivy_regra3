@@ -1,0 +1,94 @@
+Screen:
+    NavigationLayout:
+        ScreenManager:
+            Screen:
+                BoxLayout:
+                    orientation: 'vertical'
+                    MDToolbar:
+                        title: "Regra de 3"
+                        elevation: 8
+                    Widget:
+                TelaCalculo:
+                      
+<TelaCalculo>:
+    name: 'telacalculo'
+
+    MDIconButton:
+        pos_hint: {'center_x': .5, 'center_y': .8}
+        icon: 'calculator'
+        user_font_size: '50sp'
+
+    MDTextField:
+        id: p1
+        pos_hint: {'center_x': .25, 'center_y': .7}
+        size_hint_x: .3
+        size_hint_y: .060
+        hint_text:'Parametro 1:'
+        helper_text: "Digite o numero"
+        helper_text_mode: "on_focus"
+        mode: "rectangle"
+        
+    MDTextField:
+        id: p2
+        pos_hint: {'center_x': .75, 'center_y': .7}
+        size_hint_x: .3
+        size_hint_y: .060
+        hint_text:'Parametro 2:'
+        helper_text: "Digite o numero"
+        helper_text_mode: "on_focus"
+        mode: "rectangle"
+        
+    MDLabel:
+        halign: 'center'
+        pos_hint: {'center_y': .6}
+        text: 'X'
+    
+    MDTextField:
+        id: p3
+        pos_hint: {'center_x': .25, 'center_y': .5}
+        size_hint_x: .3
+        size_hint_y: .060
+        hint_text:'Parametro 3:'
+        helper_text: "Digite o numero"
+        helper_text_mode: "on_focus"
+        mode: "rectangle"
+    
+    MDLabel:
+        id: p4
+        pos_hint: {'center_x': .85, 'center_y': .5}
+        size_hint_x: .3
+        size_hint_y: .060
+        text:'Icognita:'
+       
+            
+    ButtonFocus:
+        size_hint_y: .060
+        size_hint_x: .3
+        pos_hint: {'center_x': .25, 'center_y': .3}    
+        icon: "calculator-variant"
+        text: "Calcular"
+        theme_text_color: "Custom"
+        text_color: [0,0,0,1]   
+        focus_color: app.theme_cls.accent_color
+        unfocus_color: app.theme_cls.primary_color
+        on_release: root.Calculo()
+        
+    ButtonFocus:
+        size_hint_y: .060
+        size_hint_x: .3
+        pos_hint: {'center_x': .75, 'center_y': .3}
+        text: "Limpar"
+        theme_text_color: "Custom"
+        text_color: [0,0,0,1]   
+        focus_color: app.theme_cls.accent_color
+        unfocus_color: app.theme_cls.primary_color
+        icon: "backspace-reverse"
+        on_release: root.Limpar()
+        
+    MDLabel:
+        id: resultado
+        text: "Resultado"
+        halign: "center"
+        pos_hint:{'center_y': .1}
+        theme_text_color: "Custom"
+        text_color: 0, 0, 1, 1
